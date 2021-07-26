@@ -1,0 +1,13 @@
+package guava;
+
+public class guavaMapsURL
+{
+    public static String getURL(string coords)
+    {
+        String URL = "https://www.google.com/maps/search/?api=1&query=";
+
+        URL = URL + coords;
+
+        return URL;
+    }
+}
