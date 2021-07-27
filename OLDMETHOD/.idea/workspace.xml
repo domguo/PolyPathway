@@ -20,8 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c512ea8e-3043-449b-9af1-dd9a66a9f523" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/maven-assignment/src/main/java/guava/guavaStringJoiner" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/maven-assignment/src/main/java/guava/guavaStringJoiner" beforeDir="false" afterPath="$PROJECT_DIR$/assets/maven-assignment/src/main/java/guava/guavaStringJoiner" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +43,8 @@
     <property name="ACTIVE_CLOUD_PROJECT_NUMBER" value="677736010666" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="com.google.cloudcode.ide_session_index" value="20210725_0007" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.google.cloudcode.ide_session_index" value="20210726_0012" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/PolyPathV2" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -79,5 +79,9 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="861" y="521" key="#com.intellij.fileTypes.FileTypeChooser/0.0.3440.1400/-181.-2160.2560.1400@0.0.3440.1400" timestamp="1627267862068" />
+    <state x="1377" y="477" key="FileChooserDialogImpl" timestamp="1627336188946">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1377" y="477" key="FileChooserDialogImpl/0.0.3440.1400/-181.-2160.2560.1400@0.0.3440.1400" timestamp="1627336188946" />
   </component>
 </project>

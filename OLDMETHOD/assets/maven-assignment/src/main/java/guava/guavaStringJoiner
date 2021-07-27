@@ -1,5 +1,7 @@
 package guava;
 
+
+
 public class guavaStringJoiner
 {
     public static String cordJoiner(String latitude, String longitude) //Method to conjoin the cordinates to a single string by
