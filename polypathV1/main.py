@@ -14,48 +14,54 @@
 
 # [START gae_python38_app]
 # [START gae_python3_app]
-from flask import Flask, render_template, redirect, request #Used to render and redirect
-import csv #Used to read CSV files
-import sys #Used for sys operations
+
+from flask import Flask, render_template, redirect, request  # Used to render and redirect
+import csv  # Used to read CSV files
+import sys  # Used for sys operations
 
 # If `entrypoint` is not defined in app.yaml, App Engine will look for an app
 # called `app` in `main.py`.
 app = Flask(__name__)
 
+
 @app.route('/requestMap')
 def requestGetURL():
     buildID = request.args.get('buildID')
     mapsURL = makeMapsURL(buildID)
-    return redirect(mapsURL, code = 302)
+    return redirect(mapsURL, code=302)
+
 
 @app.route('/?buildID=<string:buildID>')
 def getURL(buildID):
     # Will generate link to BuildingID
     buildID = request.form.get('buildID')
     mapsURL = makeMapsURL(buildID)
-    return redirect(mapsURL, code = 302)
+    return redirect(mapsURL, code=302)
+
 
 @app.route('/<string:buildID>')
 def directGetMapsURL(buildID):
     # Will generate link to BuildingID
     mapsURL = makeMapsURL(buildID)
-    return redirect(mapsURL, code = 302)
+    return redirect(mapsURL, code=302)
+
 
 @app.route('/')
 def root():
     return render_template('indexF.html')
 
-def makeMapsURL(buildID):
 
+def makeMapsURL(buildID):
     csv_file = csv.reader(open('Location.csv', "r"), delimiter=",")
     for row in csv_file:
-        #if current rows 2nd value is equal to input, print that row
+        # if current rows 2nd value is equal to input, print that row
         if buildID == row[0]:
             lat = row[1]
             log = row[2]
 
-    mapsURL = "https://www.google.com/maps/search/?api=1&query="+lat+"%2C"+log+"&travelmode=walking"
+    mapsURL = "https://www.google.com/maps/search/?api=1&query=" + lat + "%2C" + log + "&travelmode=walking"
     return mapsURL
+
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
@@ -64,4 +70,3 @@ if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080, debug=True)
 # [END gae_python3_app]
 # [END gae_python38_app]
-
