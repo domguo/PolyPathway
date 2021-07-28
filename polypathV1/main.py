@@ -20,7 +20,7 @@ import csv  # Used to read CSV files
 import sys  # Used for sys operations
 
 # If `entrypoint` is not defined in app.yaml, App Engine will look for an app
-# called `app` in `main.py`.
+# called `app` in `main.py`
 app = Flask(__name__)
 
 
@@ -30,25 +30,15 @@ def requestGetURL():
     mapsURL = makeMapsURL(buildID)
     return redirect(mapsURL, code=302)
 
-
-@app.route('/?buildID=<string:buildID>')
-def getURL(buildID):
-    # Will generate link to BuildingID
-    buildID = request.form.get('buildID')
-    mapsURL = makeMapsURL(buildID)
-    return redirect(mapsURL, code=302)
-
-
 @app.route('/<string:buildID>')
 def directGetMapsURL(buildID):
     # Will generate link to BuildingID
     mapsURL = makeMapsURL(buildID)
     return redirect(mapsURL, code=302)
 
-
 @app.route('/')
 def root():
-    return render_template('indexF.html')
+    return render_template('indexHome.html')
 
 
 def makeMapsURL(buildID):
