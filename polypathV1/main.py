@@ -28,6 +28,7 @@ def requestGetURL():
     buildID = request.args.get('buildID')
     isParking = request.args.get('parking')
     mapsURL = makeMapsURL(buildID,isParking)
+    print(buildID, " ", isParking)
     return redirect(mapsURL, code=302)
 
 @app.route('/<string:buildID>')
@@ -43,10 +44,11 @@ def root():
 
 def makeMapsURL(buildID,isParking):
     
-    if isParking == 1:
-        csv_file = csv.reader(open('parking.csv',"r"), delimiter=",")
-    else:
+    if isParking == None:
         csv_file = csv.reader(open('building.csv', "r"), delimiter=",")
+    else:
+        csv_file = csv.reader(open('parking.csv',"r"), delimiter=",")
+
 
     for row in csv_file:
         # if current rows 2nd value is equal to input, print that row
