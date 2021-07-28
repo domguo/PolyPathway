@@ -23,17 +23,17 @@ import sys  # Used for sys operations
 # called `app` in `main.py`
 app = Flask(__name__)
 
-
 @app.route('/requestMap')
 def requestGetURL():
     buildID = request.args.get('buildID')
-    mapsURL = makeMapsURL(buildID)
+    isParking = request.args.get('parking')
+    mapsURL = makeMapsURL(buildID,isParking)
     return redirect(mapsURL, code=302)
 
 @app.route('/<string:buildID>')
 def directGetMapsURL(buildID):
     # Will generate link to BuildingID
-    mapsURL = makeMapsURL(buildID)
+    mapsURL = makeMapsURL(buildID,0)
     return redirect(mapsURL, code=302)
 
 @app.route('/')
@@ -41,8 +41,13 @@ def root():
     return render_template('indexHome.html')
 
 
-def makeMapsURL(buildID):
-    csv_file = csv.reader(open('Location.csv', "r"), delimiter=",")
+def makeMapsURL(buildID,isParking):
+    
+    if isParking == 1:
+        csv_file = csv.reader(open('parking.csv',"r"), delimiter=",")
+    else:
+        csv_file = csv.reader(open('building.csv', "r"), delimiter=",")
+
     for row in csv_file:
         # if current rows 2nd value is equal to input, print that row
         if buildID == row[0]:
