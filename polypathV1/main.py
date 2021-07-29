@@ -29,13 +29,21 @@ def requestGetURL():
     isParking = request.args.get('parking')
     mapsURL = makeMapsURL(buildID,isParking)
     print(buildID, " ", isParking)
-    return redirect(mapsURL, code=302)
+
+    if not mapsURL:
+        return redirect('indexError.html', code=302)
+    else:
+        return redirect(mapsURL, code=302)
 
 @app.route('/<string:buildID>')
 def directGetMapsURL(buildID):
     # Will generate link to BuildingID
     mapsURL = makeMapsURL(buildID,0)
     return redirect(mapsURL, code=302)
+
+@app.route('/indexError.html')
+def directErrorPage():
+    return render_template('indexError.html')
 
 @app.route('/')
 def root():
@@ -49,15 +57,27 @@ def makeMapsURL(buildID,isParking):
     else:
         csv_file = csv.reader(open('parking.csv',"r"), delimiter=",")
 
+    lat = ""
+    log = ""
+    found = False
 
     for row in csv_file:
+        buildID = buildID.upper()
+
         # if current rows 2nd value is equal to input, print that row
         if buildID == row[0]:
             lat = row[1]
             log = row[2]
+            found = True
 
-    mapsURL = "https://maps.google.com/?saddr=Current+Location&daddr=" + lat + "%2C" + log + "&travelmode=walking"
+    print(found)
+
+    if found:
+        mapsURL = "https://maps.google.com/?saddr=Current+Location&daddr=" + lat + "%2C" + log + "&travelmode=walking"
     
+    else:
+        mapsURL = ""
+
     return mapsURL
 
 

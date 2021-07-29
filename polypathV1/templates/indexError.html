@@ -1,1 +1,24 @@
-<!-- Error Page. Will Need Buttom to return to home -->
+<!-- Error Page. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <title>PolyPathway</title>
+  </head>
+  <body>
+    <div class="container">
+        <img src="../static/images/whitePoly.png" alt=" " class="logo" />
+        <!--- <h3>What Building are you looking for</h3> -->
+        <h3 style="color:black;">Invalid input! Please enter a valid building number.</h3>
+        <form action = "/requestMap" method="GET">
+        <label for="buildID">Check For Parking</label><br>
+        <input type="checkbox" id="parking" name="parking" value="0"><br>
+        <label for="buildID">Enter Building(or parking lot)Number</label><br>
+        <input type="text" id="buildID" name="buildID" value="8"><br>
+        <input type="submit" value="Navigate!">
+        </form> 
+  </body>
+</html>
