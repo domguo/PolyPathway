@@ -56,7 +56,8 @@ def makeMapsURL(buildID,isParking):
             lat = row[1]
             log = row[2]
 
-    mapsURL = "https://www.google.com/maps/search/?api=1&query=" + lat + "%2C" + log + "&travelmode=walking"
+    mapsURL = "https://maps.google.com/?saddr=Current+Location&daddr=" + lat + "%2C" + log + "&travelmode=walking"
+    
     return mapsURL
 
 
