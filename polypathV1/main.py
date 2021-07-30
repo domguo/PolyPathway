@@ -57,6 +57,22 @@ def directGetMapsURL(buildID):
 def directErrorPage():
     return render_template('indexError.html')
 
+@app.route('/locationHome.html')
+def directLocationpage():
+    return render_template('locationHome.html')
+
+@app.route('/aboutus.html')
+def directAboutUs():
+    return render_template('aboutus.html')
+
+@app.route('/contact.html')
+def directContact():
+    return render_template('contact.html')
+
+@app.route('/campusMap.html')
+def directCampusMap():
+    return render_template('campusMap.html')
+
 @app.route('/')
 def root():
     return render_template('indexHome.html')
