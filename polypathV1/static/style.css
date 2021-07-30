@@ -169,6 +169,20 @@ a{
 .menu ul li a:hover{
     color:rgb(3, 182, 33);
 }
+
+#campusMap {
+    width: 60vw;
+     height: 60vh;
+     border: 2px solid;
+     padding: 20px; 
+     resize: vertical;
+     overflow: auto;
+     margin-top: 50px;
+     margin-bottom: 0;
+     margin-left: 150px;
+     margin-right: 0;
+}
+   
 @media (max-width: 991px){
     .showcase,
     showcase header{
