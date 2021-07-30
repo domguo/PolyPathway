@@ -18,31 +18,39 @@
 from flask import Flask, render_template, redirect, request  # Used to render and redirect
 import csv  # Used to read CSV files
 import sys  # Used for sys operations
+from mapTools import makeMapsURL
 
 # If `entrypoint` is not defined in app.yaml, App Engine will look for an app
 # called `app` in `main.py`
 app = Flask(__name__)
 
-@app.route('/requestMap')
-def requestGetURL():
+@app.route('/userRequestMap')
+def userRequestGetURL():
     buildID = request.args.get('buildID')
     isParking = request.args.get('parking')
-    mapsURL = makeMapsURL(buildID,isParking)
-    print(buildID, " ", isParking)
+
+    if isParking == None:
+        csvfile = 'building.csv'
+    else:
+        csvfile = 'parking.csv'
+
+    mapsURL = makeMapsURL(buildID, csvfile)
+    print(buildID, " ", isParking, csvfile)
 
     if not mapsURL:
         return redirect('indexError.html', code=302)
     else:
         return redirect(mapsURL, code=302)
 
-@app.route('/LocationMapRequest')
-
+@app.route('/locationRequestMap')
+def locationRequestGetURL():
+    return 1 #DOM You write here. Use the method makeMapsURL(ID, 'csv file name')
 
 
 @app.route('/<string:buildID>')
 def directGetMapsURL(buildID):
     # Will generate link to BuildingID
-    mapsURL = makeMapsURL(buildID,0)
+    mapsURL = makeMapsURL(buildID,'building.csv')
     return redirect(mapsURL, code=302)
 
 @app.route('/indexError.html')
@@ -52,38 +60,6 @@ def directErrorPage():
 @app.route('/')
 def root():
     return render_template('indexHome.html')
-
-
-def makeMapsURL(buildID,isParking):
-    
-    if isParking == None:
-        csv_file = csv.reader(open('building.csv', "r"), delimiter=",")
-    else:
-        csv_file = csv.reader(open('parking.csv',"r"), delimiter=",")
-
-    lat = ""
-    log = ""
-    found = False
-
-    for row in csv_file:
-        buildID = buildID.upper()
-
-        # if current rows 2nd value is equal to input, print that row
-        if buildID == row[0]:
-            lat = row[1]
-            log = row[2]
-            found = True
-
-    print(found)
-
-    if found:
-        mapsURL = "https://maps.google.com/?saddr=Current+Location&daddr=" + lat + "%2C" + log + "&travelmode=walking"
-    
-    else:
-        mapsURL = ""
-
-    return mapsURL
-
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
