@@ -1,35 +1,69 @@
+<!-- Home Page. -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>PolyPath Locations</title>
-		<meta charset="utf-8" />
-		<link rel="stylesheet" href="../static/locationScripts.css" />
-	</head>
+    <link rel="stylesheet" href="../static/style.css" />
+    <title>PolyPathway</title>
+  </head>
+  <!--<nav>
+    <ul>
+      <li> <a href="../templates/indexHome.html">Home</a> </li>
+      <li> <a href="../templates/locationHome.html">General Search</a> </li>
+      <li> <a href="../templates/aboutus.html">About</a> </li>
+      <li> <a href="../templates/contact.html">Contact</a> </li>
+      <li> <a href="../templates/campusMap.html">Campus Map</a> </li>
+    </ul>
+  </nav> -->
+  <body>
 
-    <section id="hero">
-        <div class="container">
-          <nav>
-            <h1>Cal Poly Attractions</h1>
-            <ul>
-              <li><a href="../templates/indexHome.html">Home</a></li>
-              <li><a href="../templates/locationsHome.html">Location</a></li>
-              <li>Html2</li>
-              <li>Html3</li>
-            </ul>
-          </nav>
-          <div class="content">
-            <img src="../static/images/whitePoly.png" alt="Avatar" class="image">
-            <ul>
-              <button>Rose Garden</button>
-              <button>Rose Garden1</button>
-              <button>Rose Garden2</button>
-              <button>Rose Garden3</button>
-            </ul>
+
+  <div class="showcase">
+    <div class="container">
+      <div class="content">
+        <div class="showcase">
+          <div class="container">
+            <img src="../static/images/whitePoly.png" alt=" " class="logo" />
+            <h3>Building Search</h3>
+            <form action = "/requestMap" method="GET">
+            <label for="buildID">Parking</label><br>
+            <input type="checkbox" id="parking" name="parking" value="0"><br>
+            <label for="buildID">Enter Building(or parking lot)Number</label><br>
+            <input type="text" id="buildID" name="buildID" value="8"><br>
+            <input type="submit" value="Navigate!">
+            </form> 
           </div>
-        </div>
-      </section>
-      
+        <img src="../static/images/whitePoly.png" alt="Avatar" class="image">
+        <ul>
+          <a href="">Rose Garden</a>
+          <a href="">Horse Statue</a>
+          <a href="">Rose Garden 2</a>
+          <a href="">Campus Location</a>
+          
+        </ul>
+      </div>
+    </div>
+  <div class="menu">
+    <ul>
+        <li> <a href="../templates/indexHome.html">Home</a> </li>
+        <li> <a href="../templates/locationHome.html">Quick Search</a> </li>
+        <li> <a href="../templates/aboutus.html">About</a> </li>
+        <li> <a href="../templates/contact.html">Contact</a> </li>
+        <li> <a href="../templates/campusMap.html">Campus Map</a> </li>
+    </ul>
+ 
+</div>
+<script>
+  const menuToggle = document.querySelector('../static/style.css/.toggle')
+  const showcase = document.querySelector('../static/style.css/.showcase')
+
+  menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active')
+      showcase.classList.toggle('active')
+  })
+</script>
+  </body>
+
 </html>

@@ -8,29 +8,16 @@
     <link rel="stylesheet" href="../static/style.css" />
     <title>PolyPathway</title>
   </head>
-  <!--<nav>
-    <ul>
-      <li> <a href="../templates/indexHome.html">Home</a> </li>
-      <li> <a href="../templates/locationHome.html">General Search</a> </li>
-      <li> <a href="../templates/aboutus.html">About</a> </li>
-      <li> <a href="../templates/contact.html">Contact</a> </li>
-      <li> <a href="../templates/campusMap.html">Campus Map</a> </li>
-    </ul>
-  </nav> -->
+  <header>
+    Campus Map
+  </header>
   <body>
 
 
-  <div class="showcase">
-    <div class="container">
-      <img src="../static/images/whitePoly.png" alt=" " class="logo" />
-      <h3>Building Search</h3>
-      <form action = "/requestMap" method="GET">
-      <label for="buildID">Parking</label><br>
-      <input type="checkbox" id="parking" name="parking" value="0"><br>
-      <label for="buildID">Enter Building(or parking lot)Number</label><br>
-      <input type="text" id="buildID" name="buildID" value="8"><br>
-      <input type="submit" value="Navigate!">
-      </form> 
+    <div class="mapBox">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.436949569411!2d-117.82396148482857!3d34.05831158060423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c32ea5e3dc4361%3A0x904ae4ed22c91eeb!2sCal%20Poly%20Pomona!5e0!3m2!1sen!2sus!4v1627504055758!5m2!1sen!2sus" 
+      width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    
     </div>
   <div class="menu">
     <ul>
@@ -54,5 +41,3 @@
   </body>
 
 </html>
-
-
