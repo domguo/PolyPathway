@@ -1,9 +1,9 @@
-ID, Location Name, latitude, longitude
-1, Enginering Medow, 43 , -108
-2, Horse Statue,  
-3, Upper Quad, 
-4, Student Center, 
-5, Bio Trek, 
-6, HorseShoHill,
-7, Rose Garden, 
-8, Japanese Garden, 
+ Location Name, latitude, longitude
+Engr. Meadow,34.05920398,-117.8213496
+Horse Statue,34.05493378,-117.8193398
+Upper Quad,34.05852786,-117.8237273
+Student Center,34.05662469,-117.8213228
+Bio Trek,34.05717417,-117.8263863
+HorseShoeHill,34.05713507,-117.8196294
+Rose Garden,34.06083738,-117.8203699
+Japanese Garden,34.05993078,-117.8204325

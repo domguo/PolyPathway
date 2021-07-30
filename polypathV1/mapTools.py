@@ -8,7 +8,8 @@ def makeMapsURL(ID,CSVname): #Used to make the Maps URL for either a building or
     found = False
 
     for row in csv_file:
-        ID = ID.upper()
+        if CSVname == 'building.csv' or CSVname == 'parking.csv':
+            ID = ID.upper()
 
         # if current rows 2nd value is equal to input, print that row
         if  ID == row[0]:
