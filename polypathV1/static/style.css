@@ -186,6 +186,68 @@ a{
      margin-left: 150px;
      margin-right: 0;
 }
+
+.contact{
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    margin-right: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.contact .content
+{
+    max-width: 1000px;
+    text-align: center;
+}
+.contact .content h2{
+    font-size: 36px;
+    font-weight: 500;
+    color:rgb(46, 41, 116)
+}
+.contact .content p{
+    font-weight: 300;
+    color:rgb(46, 41, 116)
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px ;
+}
+
+.contactForm{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    padding: 50px 100px;
+    background: rgb(255, 252, 252);
+}
+.contactForm .inputBox
+{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+.contactForm .inputBox input,
+.contactForm .inputBox textarea
+{
+    width: 100%;
+    pad: 5px 0;
+    font-size: 16px;
+    margin-top: 10px 0;
+    border:none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    resize: none;
+}
    
 @media (max-width: 991px){
     .showcase,
