@@ -35,6 +35,10 @@ def requestGetURL():
     else:
         return redirect(mapsURL, code=302)
 
+@app.route('/LocationMapRequest')
+
+
+
 @app.route('/<string:buildID>')
 def directGetMapsURL(buildID):
     # Will generate link to BuildingID

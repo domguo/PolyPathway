@@ -1,4 +1,9 @@
-0, Location Name, latitude, longitude
-1, Enginering Medow, 43...., -108
-2, 
-3, 
+ID, Location Name, latitude, longitude
+1, Enginering Medow, 43 , -108
+2, Horse Statue,  
+3, Upper Quad, 
+4, Student Center, 
+5, Bio Trek, 
+6, HorseShoHill,
+7, Rose Garden, 
+8, Japanese Garden, 
