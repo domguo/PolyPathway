@@ -6,6 +6,10 @@
 :root{
     --overlay-color: #000000;
 }
+
+::-webkit-scrollbar{
+    display: none;
+}
 .showcase{
 	
     position: absolute;
@@ -182,3 +186,4 @@ a{
         font-size: 2em;
     }
 }
+

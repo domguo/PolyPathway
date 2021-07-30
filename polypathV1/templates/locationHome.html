@@ -8,43 +8,32 @@
     <link rel="stylesheet" href="../static/style.css" />
     <title>PolyPathway</title>
   </head>
-  <!--<nav>
-    <ul>
-      <li> <a href="../templates/indexHome.html">Home</a> </li>
-      <li> <a href="../templates/locationHome.html">General Search</a> </li>
-      <li> <a href="../templates/aboutus.html">About</a> </li>
-      <li> <a href="../templates/contact.html">Contact</a> </li>
-      <li> <a href="../templates/campusMap.html">Campus Map</a> </li>
-    </ul>
-  </nav> -->
+
   <body>
+ 
 
-
-  <div class="showcase">
-    <div class="container">
-      <div class="content">
-        <div class="showcase">
-          <div class="container">
-            <img src="../static/images/whitePoly.png" alt=" " class="logo" />
-            <h3>Building Search</h3>
-            <form action = "/requestMap" method="GET">
-            <label for="buildID">Parking</label><br>
-            <input type="checkbox" id="parking" name="parking" value="0"><br>
-            <label for="buildID">Enter Building(or parking lot)Number</label><br>
-            <input type="text" id="buildID" name="buildID" value="8"><br>
-            <input type="submit" value="Navigate!">
-            </form> 
-          </div>
-        <img src="../static/images/whitePoly.png" alt="Avatar" class="image">
-        <ul>
-          <a href="">Rose Garden</a>
-          <a href="">Horse Statue</a>
-          <a href="">Rose Garden 2</a>
-          <a href="">Campus Location</a>
-          
-        </ul>
+    <div class="showcase">
+      <div class="container">
+        <img src="../static/images/whitePoly.png" alt=" " class="logo" />
+        <h3>Quick Search</h3>
+        <form action = "/LocationMapRequest" method="GET">
+      
+        <input type="button" id="locName" name="locName" value="Engr. Meadow">
+        <input type="button" id="locName" name="locName" value="Horse Statue">
+        <input type="button" id="locName" name="locName" value="Upper Quad">
+        <input type="button" id="locName" name="locName" value="Student Center"><br>
+        <input type="button" id="locName" name="locName" value="Bio Trek">
+        <input type="button" id="locName" name="locName" value="HorseShoHill">
+        <input type="button" id="locName" name="locName" value="Rose Garden">
+        <input type="button" id="locName" name="locName" value="Japanese Garden"><br>
+        <input type="button" id="locName" name="locName" value="Place Holder">
+        <input type="button" id="locName" name="locName" value="Place Holder">
+        <input type="button" id="locName" name="locName" value="Place Holder">
+        <input type="button" id="locName" name="locName" value="Place Holder"><br>
+        
+        </form> 
       </div>
-    </div>
+    
   <div class="menu">
     <ul>
         <li> <a href="../templates/indexHome.html">Home</a> </li>
@@ -64,6 +53,8 @@
       showcase.classList.toggle('active')
   })
 </script>
+
+  
   </body>
 
 </html>
