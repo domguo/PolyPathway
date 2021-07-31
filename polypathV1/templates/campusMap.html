@@ -12,60 +12,63 @@
       h1 {
       display: block;
       font-size: 2em;
-      margin-top: 0;
-      margin-bottom: 0;
-      margin-left: 460px;
-      margin-right: 0;
+      text-align: center;
       font-style: italic;
       }
 
     </style>
-    <body>
-    <h1>Campus Map</h1>
-    <div id="campusMap" ></div>
-  
-    <script>     //Script for Custom Map
-      function initMap() {        
-          map = new google.maps.Map(document.getElementById('campusMap'), {
-            center: {
-              lat: 34.058591346994056,
-              lng: -117.82175552024833
-            },
-            zoom: 18,
-            mapId: '86537033817cb2e3', //custom map ID
-            mapTypeControl: false, //Map controls to see streetview, fullscreen
-            fullscreenControl: false,
-            streetViewControl: false,
-          });
-        }
-    </script>
-
-    <!-- Replace API_KEY when we go live and you can keep the MAP_ID  -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDM5ER6H4oOxs9vSfGVjaraypAmOZwtb3g&map_ids=86537033817cb2e3&callback=initMap">
-    </script>
     </body>
 
-    <div id="sidebar">
-      <div class="toggle-btn" onclick="show()">
-        <span></span>
-        <span></span>
-        <span></span>
+    <body>
+      <div id="sidebar">
+          <div class="toggle-btn" onclick="show()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+    
+          <ul>
+            <li> <a href="../">Home</a> </li>
+            <li> <a href="../locationHome.html">Quick Search</a> </li>
+            <li> <a href="../aboutus.html">About</a> </li>
+            <li> <a href="../contact.html">Contact</a> </li>
+            <li> <a href="../campusMap.html">Campus Map</a> </li>
+          </ul>
       </div>
 
-      <ul>
-        <li> <a href="../">Home</a> </li>
-        <li> <a href="../locationHome.html">Quick Search</a> </li>
-        <li> <a href="../aboutus.html">About</a> </li>
-        <li> <a href="../contact.html">Contact</a> </li>
-        <li> <a href="../campusMap.html">Campus Map</a> </li>
-    </ul>
-</div>
-
-<script>
-  function show() {
-    document.getElementById('sidebar').classList.toggle('active');
-  }
-</script>
-  </body>
+        <script>
+          function show() {
+            document.getElementById('sidebar').classList.toggle('active');
+          }
+        </script>
+    </body>
+    
+        <!-- For Customizing the Map -->
+        <body>
+          <h1>Campus Map</h1>
+          <div id="campusMap" ></div>
+        
+          <script>     //Script for Custom Map
+            function initMap() {        
+                map = new google.maps.Map(document.getElementById('campusMap'), {
+                  center: {
+                    lat: 34.058591346994056,
+                    lng: -117.82175552024833
+                  },
+                  zoom: 18,
+                  mapId: '86537033817cb2e3', //custom map ID
+                  mapTypeControl: false, //Map controls to see streetview, fullscreen
+                  fullscreenControl: false,
+                  streetViewControl: false,
+                });
+              }
+          </script>
+      
+          <!-- Replace API_KEY when we go live and you can keep the MAP_ID  -->
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnQLfehLWCsHMsay61rzCnF4JelH4VqVU&map_ids=86537033817cb2e3&callback=initMap">
+          </script>
+    
+    
+    </body>
 
 </html>
