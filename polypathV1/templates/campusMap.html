@@ -8,46 +8,38 @@
     <link rel="stylesheet" href="../static/style.css" />
     <link rel="icon" href="../static/images/PathIcon.png">
     <title>PolyPathway</title>
-    <style>
-      h1 {
-      display: block;
-      font-size: 2em;
-      text-align: center;
-      font-style: italic;
-      }
-
-    </style>
-    </body>
+  </head>
 
     <body>
-      <div id="sidebar">
-          <div class="toggle-btn" onclick="show()">
-            <span></span>
-            <span></span>
-            <span></span>
+      <section class="showcase">
+          <div id="sidebar">
+ 
+              <div class="toggle-btn" onclick="show()">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+          
+              <ul>
+                <li> <a href="../">Home</a> </li>
+                <li> <a href="../locationHome.html">Quick Search</a> </li>
+                <li> <a href="../aboutus.html">About</a> </li>
+                <li> <a href="../contact.html">Contact</a> </li>
+                <li> <a href="../campusMap.html">Campus Map</a> </li>
+            </ul>
           </div>
-    
-          <ul>
-            <li> <a href="../">Home</a> </li>
-            <li> <a href="../locationHome.html">Quick Search</a> </li>
-            <li> <a href="../aboutus.html">About</a> </li>
-            <li> <a href="../contact.html">Contact</a> </li>
-            <li> <a href="../campusMap.html">Campus Map</a> </li>
-          </ul>
-      </div>
-
-        <script>
-          function show() {
-            document.getElementById('sidebar').classList.toggle('active');
-          }
-        </script>
-    </body>
-    
-        <!-- For Customizing the Map -->
-        <body>
-          <h1>Campus Map</h1>
-          <div id="campusMap" ></div>
+          <section class="container">
+            <img src="../static/images/polyPathFF.png" alt=" " class="logo" />
+      
+            <br><br><br>  
+            <div id="campusMap" ></div>          
+      <script>
+        function show() {
+          document.getElementById('sidebar').classList.toggle('active');
+        }
         
+      </script>
+
           <script>     //Script for Custom Map
             function initMap() {        
                 map = new google.maps.Map(document.getElementById('campusMap'), {
@@ -63,12 +55,9 @@
                 });
               }
           </script>
-      
-          <!-- Replace API_KEY when we go live and you can keep the MAP_ID  -->
-          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnQLfehLWCsHMsay61rzCnF4JelH4VqVU&map_ids=86537033817cb2e3&callback=initMap">
-          </script>
-    
-    
-    </body>
-
+        
+            <!-- Replace API_KEY when we go live and you can keep the MAP_ID  -->
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnQLfehLWCsHMsay61rzCnF4JelH4VqVU&map_ids=86537033817cb2e3&callback=initMap">
+            </script>
+  </body>
 </html>

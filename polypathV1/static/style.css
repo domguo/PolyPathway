@@ -174,10 +174,6 @@ a{
      overflow: auto;
      display: flex;
      position: center;
-     margin-top: 50px;
-     margin-bottom: 0;
-     margin-left: 300px;
-     margin-right: 0;
    }
 
 .form-group{
