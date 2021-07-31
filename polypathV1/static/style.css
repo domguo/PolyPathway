@@ -204,7 +204,7 @@ a{
        color:rgb(46, 41, 116)
    }
    
-   .container{
+   .contact .container{
        width: 100%;
        display: flex;
        justify-content: center;
