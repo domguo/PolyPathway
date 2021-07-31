@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="../static/style.css" />
+    <link rel="icon" href="../static/images/PathIcon.png">
     <title>PolyPathway</title>
   </head>
   <body>
@@ -17,16 +18,19 @@
 
   <section class="showcase">
     <section class="container">
-      <img src="../static/images/whitePoly.png" alt=" " class="logo" />
-      <h3>Building Search</h3>
+      <img src="../static/images/newPolyF.png" alt=" " class="logo" />
+      <br><br><br>
+      
       <form action = "/userRequestMap" method="GET">
+       <label for="buildID">Enter Building/Parking-Lot Number</label><br>
       <label for="buildID">Parking</label><br>
       <input type="checkbox" id="parking" name="parking" value="0"><br>
-      <label for="buildID">Enter Building/Parking-Lot Number</label><br>
+     
       <input type="text" id="buildID" name="buildID" value="8"><br>
       <input type="submit" value="Navigate!">
       </form> 
       </section>
+      
 
   <div id="sidebar">
       <div class="toggle-btn" onclick="show()">
