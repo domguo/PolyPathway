@@ -55,8 +55,7 @@ def locationRequestGetURL():
 
 @app.route('/<string:buildID>')
 def directGetMapsURL(buildID):
-    # Will generate link to BuildingID
-    mapsURL = makeMapsURL(buildID,'building.csv')
+    mapsURL = makeMapsURL(buildID,'building.csv') # Will generate link to BuildingID
     return redirect(mapsURL, code=302)
 
 @app.route('/indexError.html')

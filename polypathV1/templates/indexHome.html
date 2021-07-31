@@ -10,53 +10,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="../static/style.css" />
+    <link rel="icon" href="../static/images/PathIcon.png">
     <title>PolyPathway</title>
   </head>
-  <!--<nav>
-    <ul>
-      <li> <a href="../templates/indexHome.html">Home</a> </li>
-      <li> <a href="../templates/locationHome.html">General Search</a> </li>
-      <li> <a href="../templates/aboutus.html">About</a> </li>
-      <li> <a href="../templates/contact.html">Contact</a> </li>
-      <li> <a href="../templates/campusMap.html">Campus Map</a> </li>
-    </ul>
-  </nav> -->
   <body>
 
 
-  <div class="showcase">
-    <div class="container">
-      <img src="../static/images/whitePoly.png" alt=" " class="logo" />
-      <h3>Building Search</h3>
+  <section class="showcase">
+    <section class="container">
+      <img src="../static/images/polyPathFF.png" alt=" " class="logo" />
+
+      <br><br><br>
+      
       <form action = "/userRequestMap" method="GET">
+       <label for="buildID">Enter Building/Parking-Lot Number</label><br>
       <label for="buildID">Parking</label><br>
       <input type="checkbox" id="parking" name="parking" value="0"><br>
-      <label for="buildID">Enter Building/Parking-Lot Number</label><br>
+     
       <input type="text" id="buildID" name="buildID" value="8"><br>
       <input type="submit" value="Navigate!">
       </form> 
-    </div>
+      </section>
+      
 
+  <div id="sidebar">
+      <div class="toggle-btn" onclick="show()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-  <div class="menu">
-    <ul>
+      <ul>
         <li> <a href="../">Home</a> </li>
         <li> <a href="../locationHome.html">Quick Search</a> </li>
         <li> <a href="../aboutus.html">About</a> </li>
         <li> <a href="../contact.html">Contact</a> </li>
         <li> <a href="../campusMap.html">Campus Map</a> </li>
     </ul>
- 
 </div>
-<script>
-  const menuToggle = document.querySelector('../static/style.css/.toggle')
-  const showcase = document.querySelector('../static/style.css/.showcase')
 
-  menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('active')
-      showcase.classList.toggle('active')
-  })
+<script>
+  function show() {
+    document.getElementById('sidebar').classList.toggle('active');
+  }
 </script>
+
+
   </body>
 
 </html>
