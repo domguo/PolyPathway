@@ -44,25 +44,27 @@
     </script>
     </body>
 
-    <div class="menu">
+    <div id="sidebar">
+      <div class="toggle-btn" onclick="show()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
       <ul>
-          <li> <a href="../templates/indexHome.html">Home</a> </li>
-          <li> <a href="../templates/locationHome.html">Quick Search</a> </li>
-          <li> <a href="../templates/aboutus.html">About</a> </li>
-          <li> <a href="../templates/contact.html">Contact</a> </li>
-          <li> <a href="../templates/campusMap.html">Campus Map</a> </li>
-      </ul>  
-  </div>
+        <li> <a href="../templates/indexHome.html">Home</a> </li>
+        <li> <a href="../templates/locationHome.html">Quick Search</a> </li>
+        <li> <a href="../templates/aboutus.html">About</a> </li>
+        <li> <a href="../templates/contact.html">Contact</a> </li>
+        <li> <a href="../templates/campusMap.html">Campus Map</a> </li>
+    </ul>
+</div>
 
-  <script>
-    const menuToggle = document.querySelector('../static/style.css/.toggle')
-    const showcase = document.querySelector('../static/style.css/.showcase')
-
-    menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active')
-        showcase.classList.toggle('active')
-    })
-  </script>
+<script>
+  function show() {
+    document.getElementById('sidebar').classList.toggle('active');
+  }
+</script>
   </body>
 
 </html>
