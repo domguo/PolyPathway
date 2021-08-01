@@ -17,9 +17,10 @@
 
 from flask import Flask, render_template, redirect, request  # Used to render and redirect
 import pandas
+from mapTools import makeMapsURL
 import csv  # Used to read CSV files
 import sys  # Used for sys operations
-from mapTools import makeMapsURL
+
 
 # If `entrypoint` is not defined in app.yaml, App Engine will look for an app
 # called `app` in `main.py`
