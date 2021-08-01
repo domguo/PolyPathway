@@ -16,6 +16,7 @@
 # [START gae_python3_app]
 
 from flask import Flask, render_template, redirect, request  # Used to render and redirect
+import pandas
 import csv  # Used to read CSV files
 import sys  # Used for sys operations
 from mapTools import makeMapsURL
@@ -45,12 +46,24 @@ def userRequestGetURL():
 @app.route('/LocationRequestMap')
 def locationRequestGetURL():
     csvfile = 'KeyLocations.csv'
-
     buildID = request.args.get('locName')
-
     mapsURL = makeMapsURL(buildID, csvfile)
-
     return redirect(mapsURL, code=302) #DOM You write here. Use the method makeMapsURL(ID, 'csv file name')
+
+@app.route('/events.html')
+def directEvents():
+    print("Dirction Triggered")
+    filename = 'events.csv'
+    data = pandas.read_csv(filename, delimiter=",", header=0)
+    print(data)
+    eventlistdata = list(data.values)
+    return render_template('events.html', eventlist=eventlistdata)
+
+@app.route('/eventsGO')
+def directeventLocation():
+    eventID = request.args.get("eventID")
+    mapsURL = makeMapsURL(eventID, 'events.csv')
+    return redirect(mapsURL, code = 302)
 
 
 @app.route('/<string:buildID>')
