@@ -18,7 +18,7 @@ def makeMapsURL(ID,CSVname): #Used to make the Maps URL for either a building or
             found = True
 
     if found:
-        mapsURL = "https://maps.google.com/?saddr=Current+Location&daddr=" + lat + "%2C" + log + "&travelmode=walking"
+        mapsURL = "https://maps.google.com/?daddr=" + lat + "%2C" + log + "&travelmode=walking&dir_action=navigate"
     
     else:
         mapsURL = ""
