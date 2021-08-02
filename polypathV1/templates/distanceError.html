@@ -1,13 +1,10 @@
-<!-- Home Page. -->
-<!-- JelloMan -->
-
-
+<!-- Distance Page. -->
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content ="width=device-width,initial-scale=1,user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="../static/style.css" />
     <link rel="icon" href="../static/images/PathIcon.png">
@@ -22,13 +19,21 @@
 
       <br><br><br>
       
-      <form action = "/userRequestMap" method="GET">
-       <label for="buildID">Enter Building/Parking-Lot Number</label><br><br>
+      <form action = "/findDistance" method="GET">
+        <h3 style="color:black;">Invalid input! One or both of your inputs were invalid.</h3><br>
+       <label for="buildID">Enter Building/Parking-Lot Number to Calculate From</label><br><br>
       <label for="buildID">PARKING</label><br>
-      <input type="checkbox" id="parking" name="parking" value="0"><br>
+      <input type="checkbox" id="parking1" name="parking1" value="0"><br>
      
-      <input type="text" id="buildID" name="buildID" value="8"><br>
-      <input type="submit" value="NAVIGATE">
+      <input type="text" id="buildID1" name="buildID1" value="8"><br>
+
+      <label for="buildID">Enter Building/Parking-Lot Number to Calculate To</label><br><br>
+      <label for="buildID">PARKING</label><br>
+      <input type="checkbox" id="parking2" name="parking2" value="0"><br>
+     
+      <input type="text" id="buildID2" name="buildID2" value="66"><br>
+
+      <input type="submit" value="CALCULATE">
       </form> 
       </section>
       <style>
@@ -40,21 +45,16 @@
           border-style:groove
         }
       </style>
+      
 
+  <div id="sidebar">
       <div class="toggle-btn" onclick="show()">
         <span></span>
         <span></span>
         <span></span>
       </div>
-  <div id="sidebar">
-
 
       <ul>
-        <div class="toggle-btn" onclick="show()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
         <li> <a href="../">Home</a> </li>
         <li> <a href="../locationHome">Quick Search</a> </li>
         <li> <a href="../events">Events</a> </li>

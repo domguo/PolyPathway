@@ -16,9 +16,10 @@
 # [START gae_python3_app]
 
 from flask import Flask, render_template, redirect, request  # Used to render and redirect
+from mapTools import getCoords, getDistance, makeMapsURL
 import csv  # Used to read CSV files
 import sys  # Used for sys operations
-from mapTools import makeMapsURL
+
 
 # If `entrypoint` is not defined in app.yaml, App Engine will look for an app
 # called `app` in `main.py`
@@ -38,19 +39,58 @@ def userRequestGetURL():
     print(buildID, " ", isParking, csvfile)
 
     if not mapsURL:
-        return redirect('indexError.html', code=302)
+        return redirect('indexError', code=302)
     else:
         return redirect(mapsURL, code=302)
+
+@app.route('/findDistance')
+def calculateDistance():
+    buildID1 = request.args.get('buildID1')
+    buildID2 = request.args.get('buildID2')
+    isParking1 = request.args.get('parking1')
+    isParking2 = request.args.get('parking2')
+
+    if isParking1 == None:
+        csvfile1 = 'building.csv'
+    else:
+        csvfile1 = 'parking.csv'
+
+    if isParking2 == None:
+        csvfile2 = 'building.csv'
+    else:
+        csvfile2 = 'parking.csv'
+
+    coords1 = getCoords(buildID1, csvfile1)
+    coords2 = getCoords(buildID2, csvfile2)
+
+    if len(coords1) == 0 or len(coords2) == 0:
+        return redirect('distanceError', code=302)
+
+    else:
+        output = getDistance(buildID1, buildID2, isParking1, isParking2, coords1, coords2)
+
+    return render_template('distance.html', variable = output)
 
 @app.route('/LocationRequestMap')
 def locationRequestGetURL():
     csvfile = 'KeyLocations.csv'
-
     buildID = request.args.get('locName')
-
     mapsURL = makeMapsURL(buildID, csvfile)
+    return redirect(mapsURL, code=302)
 
-    return redirect(mapsURL, code=302) #DOM You write here. Use the method makeMapsURL(ID, 'csv file name')
+@app.route('/events')
+def directEvents():
+    CSVname = 'events.csv'
+    data = csv.reader(open(CSVname,"r"), delimiter=",")
+    eventlistdata = list(data)
+    print(eventlistdata)
+    return render_template('events.html', eventlist=eventlistdata)
+
+@app.route('/eventsGO')
+def directeventLocation():
+    eventID = request.args.get("eventID")
+    mapsURL = makeMapsURL(eventID, 'events.csv')
+    return redirect(mapsURL, code = 302)
 
 
 @app.route('/<string:buildID>')
@@ -58,25 +98,34 @@ def directGetMapsURL(buildID):
     mapsURL = makeMapsURL(buildID,'building.csv') # Will generate link to BuildingID
     return redirect(mapsURL, code=302)
 
-@app.route('/indexError.html')
+@app.route('/indexError')
 def directErrorPage():
     return render_template('indexError.html')
 
-@app.route('/locationHome.html')
+@app.route('/locationHome')
+@app.route('/locationhome')
 def directLocationpage():
     return render_template('locationHome.html')
 
-@app.route('/aboutus.html')
+@app.route('/aboutus')
 def directAboutUs():
     return render_template('aboutus.html')
 
-@app.route('/contact.html')
+@app.route('/contact')
 def directContact():
     return render_template('contact.html')
 
-@app.route('/campusMap.html')
+@app.route('/campusMap')
 def directCampusMap():
     return render_template('campusMap.html')
+
+@app.route('/distance')
+def directDistance():
+    return render_template('distance.html')
+
+@app.route('/distanceError')
+def directDistanceError():
+    return render_template('distanceError.html')
 
 @app.route('/')
 def root():
