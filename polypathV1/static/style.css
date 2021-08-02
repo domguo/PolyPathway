@@ -47,7 +47,7 @@
 }
 
 body {
-	background-color:rgb(20, 107, 35);
+	background-image:url('../static/images/pool_table.png');
 	
 	color: #FFFFFF;
 	line-height: 1.6;
@@ -146,12 +146,13 @@ a{
     color: rgb(255, 255, 255);
     font-size:20px;
     padding: 20px 24px;
+  
 }
 
-#sidebar .toggle-btn{
-    position:absolute;
+.toggle-btn{
+    position:fixed;
+    right: 30px;
     top:30px;
-    left: 330px;
 }
 
 .toggle-btn span{
@@ -188,6 +189,7 @@ a{
        justify-content: center;
        align-items: center;
        flex-direction: column;
+       
    }
    .contact .content
    {
