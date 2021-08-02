@@ -67,9 +67,9 @@ def calculateDistance():
         return redirect('distanceError', code=302)
 
     else:
-        getDistance(buildID1, buildID2, isParking1, isParking2, coords1, coords2)
+        output = getDistance(buildID1, buildID2, isParking1, isParking2, coords1, coords2)
 
-    return 1
+    return render_template('distance.html', variable = output)
 
 @app.route('/LocationRequestMap')
 def locationRequestGetURL():
