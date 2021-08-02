@@ -3,8 +3,6 @@
     {% for value in eventlist %}
         <tr>
           <td>{{ value[0] }}</td>
-          <td>{{ value[1] }}</td>
-          <td>{{ value[2] }}</td>
           <td>{{ value[3] }}</td>
           <form action = "/eventsGO" method="GET">
           <input type="submit" id="eventID" name="eventID" value={{value[0]}}>

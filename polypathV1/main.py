@@ -16,7 +16,6 @@
 # [START gae_python3_app]
 
 from flask import Flask, render_template, redirect, request  # Used to render and redirect
-import pandas
 from mapTools import makeMapsURL
 import csv  # Used to read CSV files
 import sys  # Used for sys operations
@@ -53,11 +52,10 @@ def locationRequestGetURL():
 
 @app.route('/events.html')
 def directEvents():
-    print("Dirction Triggered")
-    filename = 'events.csv'
-    data = pandas.read_csv(filename, delimiter=",", header=0)
-    print(data)
-    eventlistdata = list(data.values)
+    CSVname = 'events.csv'
+    data = csv.reader(open(CSVname,"r"), delimiter=",")
+    eventlistdata = list(data)
+    print(eventlistdata)
     return render_template('events.html', eventlist=eventlistdata)
 
 @app.route('/eventsGO')
