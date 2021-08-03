@@ -13,7 +13,34 @@
   <body>
 
 
+
   <section class="showcase">
+    <div class="toggle-btn" onclick="show()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+<div id="sidebar">
+
+
+    <ul>
+      <div class="toggle-btn" onclick="show()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="entireSection">
+        <li> <a href="../">Home</a> </li>
+        <li> <a href="../locationHome">Quick Search</a> </li>
+        <li> <a href="../distance">ETA</a> </li>
+        <li> <a href="../events">Events</a> </li>
+        <li> <a href="../campusMap">Campus Map</a> </li>
+        <li> <a href="../contact">Contact</a> </li>
+        <li> <a href="../aboutus">About</a> </li>
+      </div>
+     
+  </ul>
+</div>
     <section class="container">
       <img src="../static/images/polyPathFF.png" alt=" " class="logo" />
 
@@ -21,14 +48,20 @@
       
       <form action = "/findDistance" method="GET">
        <label for="buildID">Enter Building/Parking-Lot Number to Calculate From</label><br><br>
-      <label for="buildID">PARKING</label><br>
-      <input type="checkbox" id="parking1" name="parking1" value="0"><br>
+       <div class="parking">
+        <label for="buildID">PARKING</label><br>
+        <input type="checkbox" id="parking1" name="parking1" value="0"><br>
+       </div>
+      
      
       <input type="text" id="buildID1" name="buildID1" value="8"><br>
 
       <label for="buildID">Enter Building/Parking-Lot Number to Calculate To</label><br><br>
-      <label for="buildID">PARKING</label><br>
-      <input type="checkbox" id="parking2" name="parking2" value="0"><br>
+      <div class="parking">
+        <label for="buildID">PARKING</label><br>
+        <input type="checkbox" id="parking2" name="parking2" value="0"><br>
+       
+      </div>
      
       <input type="text" id="buildID2" name="buildID2" value="66"><br>
 
@@ -37,33 +70,24 @@
       <br>
       <h3 style="color:black;">{{variable}}</h3>
       </section>
+      </section>
+
       <style>
 
         form input {
           width: 100%;
           letter-spacing:4mm;
           border-radius: 20rem;
-          border-style:groove
+          border-style:groove;
+         
+        }
+        form .parking {
+          width:10%;
         }
       </style>
       
 
-  <div id="sidebar">
-      <div class="toggle-btn" onclick="show()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <ul>
-        <li> <a href="../">Home</a> </li>
-        <li> <a href="../locationHome">Quick Search</a> </li>
-        <li> <a href="../events">Events</a> </li>
-        <li> <a href="../campusMap">Campus Map</a> </li>
-        <li> <a href="../contact">Contact</a> </li>
-        <li> <a href="../aboutus">About</a> </li>
-    </ul>
-</div>
+  
 
 <script>
   function show() {

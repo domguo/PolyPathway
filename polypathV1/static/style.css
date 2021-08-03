@@ -48,7 +48,7 @@
 
 body {
 	background-image:url('../static/images/pool_table.png');
-	
+	font-family: 'Play', sans-serif;;
 	color: #FFFFFF;
 	line-height: 1.6;
 }
@@ -132,14 +132,22 @@ a{
 
 #sidebar{
     position: absolute;
-    width: 300px;
+   
+    width: 350px;
     height: 100%;
     background-image: url('../static/images/background2.png');
-    left: -300px; 
-    transition: .5s; 
+    right: -350px; 
+    display:none;
+    transition:4s; 
 }
 #sidebar.active{
-    left:0;
+
+    display: flex;
+    right:0;
+  
+}
+#sidebar .entireSection {
+    margin-top: 30px;
 }
 #sidebar ul li{
     list-style:none;
@@ -148,6 +156,7 @@ a{
     padding: 20px 24px;
   
 }
+
 
 .toggle-btn{
     position:fixed;
@@ -167,18 +176,17 @@ a{
 /*---------------------------*/
 /*CSS for Campus Map and Contact*/
 #campusMap {
-    width: 60vw;
-     height: 60vh;
+    
+    width:600px;
+    height:600px;
      border: 2px solid;
-     padding: 20px; 
-     resize: vertical;
+     resize:both;
      overflow: auto;
      display: flex;
      position: center;
      margin-top: 50px;
-     margin-bottom: 0;
-     margin-left: 300px;
-     margin-right: 0;
+    margin: auto;
+   
 
    }
    .contact{
