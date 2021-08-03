@@ -1,5 +1,5 @@
 import csv
-import requests
+import urllib.request as requests
 import json
 
 def makeMapsURL(ID,CSVname): #Used to make the Maps URL for either a building or a Parking lot.
@@ -79,9 +79,9 @@ def getDistance(ID1, ID2, park1, park2, coords1, coords2):
     url += '&mode=walking'
     url += '&key=AIzaSyCnQLfehLWCsHMsay61rzCnF4JelH4VqVU'
 
-    resp = requests.get(url = url)
+    resp = requests.urlopen(url)
 
-    data = resp.json()
+    data = json.load(resp)
 
     distance = data['rows'][0]['elements'][0]['distance']['text']
     duration = data['rows'][0]['elements'][0]['duration']['text']
