@@ -1,14 +1,93 @@
 <!DOCTYPE html>
-<tbody>
-    {% for value in eventlist %}
-        <tr>
-          <td>{{ value[0] }}</td>
-          <td>{{ value[3] }}</td>
-          <form action = "/eventsGO" method="GET">
-          <input type="submit" id="eventID" name="eventID" value={{value[0]}}>
-          </form> 
-          <br>
-        </tr>
-    {% endfor %}
-</tbody> 
+
+
+<!-- Home Page. -->
+<!-- JelloMan -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content ="width=device-width,initial-scale=1,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="icon" href="../static/images/PathIcon.png">
+    <title>PolyPathway</title>
+  </head>
+  <body>
+
+
+  <section class="showcase">
+    <section class="container">
+      <img src="../static/images/polyPathFF.png" alt=" " class="logo" />
+      <br><br><br>
+      <tbody>
+        {% for value in eventlist %}
+            <tr>
+              <td>{{ value[0] }}</td>
+              <td>{{ value[3] }}</td>
+              <form action = "/eventsGO" method="GET">
+              <input type="submit" id="eventID" name="eventID" value={{value[0]}}>
+              </form> 
+              <br>
+            </tr>
+        {% endfor %}
+    </tbody> 
+      </section>
+      <style>
+
+        form input {
+          width: 100%;
+          letter-spacing:4mm;
+          border-radius: 20rem;
+          border-style:groove;
+         
+        }
+        form .parking {
+          width:10%;
+        }
+      </style>
+
+      <div class="toggle-btn" onclick="show()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+  <div id="sidebar">
+
+
+      <ul>
+        <div class="toggle-btn" onclick="show()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="entireSection">
+          <div class="currentSelect">
+            <li> <a href="../">Home</a> <style> .currentSelect li a { color: white;}</style> </li>
+          </div>
+          <li> <a href="../locationHome">Quick Search</a> </li>
+          <li> <a href="../distance">ETA Calculator</a> </li>
+          <li> <a href="../events">Events</a> </li>
+          <li> <a href="../campusMap">Campus Map</a> </li>
+          <li> <a href="../contact">Contact</a> </li>
+          <li> <a href="../aboutus">About</a> </li>
+        </div>
+       
+    </ul>
+</div>
+
+<script>
+  function show() {
+    document.getElementById('sidebar').classList.toggle('active');
+  }
+</script>
+
+
+  </body>
+
+</html>
+
 
