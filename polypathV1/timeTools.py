@@ -14,4 +14,3 @@ def makeEventList():
     return currentEvents
 
 
-

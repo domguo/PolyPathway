@@ -27,9 +27,9 @@
         {% for value in eventlist %}
             <tr>
               <td>{{ value[0] }}</td>
-              <td>Start: </td>
+      
               <td>{{ value[4] }}</td>
-              <td>End: </td>
+         
               <td>{{ value[5] }}</td>
               <form action = "/eventsGO" method="GET">
               <input type="submit" id="eventID" name="eventID" value={{value[0]}}>
@@ -68,12 +68,14 @@
           <span></span>
         </div>
         <div class="entireSection">
-          <div class="currentSelect">
-            <li> <a href="../">Home</a> <style> .currentSelect li a { color: white;}</style> </li>
-          </div>
+         
+          <li> <a href="../">Home</a> 
           <li> <a href="../locationHome">Quick Search</a> </li>
           <li> <a href="../distance">ETA Calculator</a> </li>
-          <li> <a href="../events">Events</a> </li>
+          <div class="currentSelect">
+            <li> <a href="../events">Events</a>  <style> .currentSelect li a { color: white;}</style> </li>
+          </div>
+       
           <li> <a href="../campusMap">Campus Map</a> </li>
           <li> <a href="../contact">Contact</a> </li>
           <li> <a href="../aboutus">About</a> </li>
