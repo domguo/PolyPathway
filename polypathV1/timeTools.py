@@ -1,14 +1,9 @@
 import time
 import csv  # Used to read CSV files
-import sys  # Used for sys operat
 
 def makeEventList():
     currentTime = time.time()
-
-    s = "03-aug-21:16:55:00"
-    timestruct = time.strptime(s, "%d-%b-%y:%H:%M:%S")
-    myTimeS = time.mktime(timestruct)
-
+    
     data = csv.reader(open('events.csv',"r"), delimiter=",")
     currentEvents = list()
     for row in data:
