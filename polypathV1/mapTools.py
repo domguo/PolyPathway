@@ -77,7 +77,7 @@ def getDistance(ID1, ID2, park1, park2, coords1, coords2):
     url += '&destinations=' + coords2['lat'] + '%2C' + coords2['long']
     url += '&units=imperial'
     url += '&mode=walking'
-    url += '&key=AIzaSyCnQLfehLWCsHMsay61rzCnF4JelH4VqVU'
+    url += '&key=AIzaSyB8bGbnUsSdSd-pqSBuAixTFWNH6V80PPc'
 
     resp = requests.urlopen(url)
 

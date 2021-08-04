@@ -17,6 +17,7 @@
 
 from flask import Flask, render_template, redirect, request  # Used to render and redirect
 from mapTools import getCoords, getDistance, makeMapsURL
+import timeTools
 import csv  # Used to read CSV files
 import sys  # Used for sys operations
 
@@ -80,10 +81,7 @@ def locationRequestGetURL():
 
 @app.route('/events')
 def directEvents():
-    CSVname = 'events.csv'
-    data = csv.reader(open(CSVname,"r"), delimiter=",")
-    eventlistdata = list(data)
-    print(eventlistdata)
+    eventlistdata = timeTools.makeEventList()
     return render_template('events.html', eventlist=eventlistdata)
 
 @app.route('/eventsGO')

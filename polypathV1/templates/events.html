@@ -27,14 +27,17 @@
         {% for value in eventlist %}
             <tr>
               <td>{{ value[0] }}</td>
-              <td>{{ value[3] }}</td>
+              <td>Start: </td>
+              <td>{{ value[4] }}</td>
+              <td>End: </td>
+              <td>{{ value[5] }}</td>
               <form action = "/eventsGO" method="GET">
               <input type="submit" id="eventID" name="eventID" value={{value[0]}}>
-              </form> 
+              </form>
               <br>
             </tr>
         {% endfor %}
-    </tbody> 
+    </tbody>
       </section>
       <style>
 
@@ -43,7 +46,7 @@
           letter-spacing:4mm;
           border-radius: 20rem;
           border-style:groove;
-         
+
         }
         form .parking {
           width:10%;
@@ -75,7 +78,7 @@
           <li> <a href="../contact">Contact</a> </li>
           <li> <a href="../aboutus">About</a> </li>
         </div>
-       
+
     </ul>
 </div>
 
@@ -89,5 +92,3 @@
   </body>
 
 </html>
-
-
