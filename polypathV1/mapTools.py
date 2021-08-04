@@ -64,15 +64,6 @@ def getDistance(ID1, ID2, park1, park2, coords1, coords2):
 
     url = 'https://maps.googleapis.com/maps/api/distancematrix/json'
 
-    # params = dict(
-    #     origins=coords1['lat'] + '%2C' + coords1['long'],
-    #     destinations=coords2['lat'] + '%2C' + coords2['long'],
-    #     mode='walking',
-    #     language='en-EN',
-    #     key='AIzaSyCnQLfehLWCsHMsay61rzCnF4JelH4VqVU'
-
-    # )
-
     url += '?origins=' + coords1['lat'] + '%2C' + coords1['long']
     url += '&destinations=' + coords2['lat'] + '%2C' + coords2['long']
     url += '&units=imperial'
@@ -105,3 +96,18 @@ def getDistance(ID1, ID2, park1, park2, coords1, coords2):
     output += duration + '\n'
 
     return output
+
+#   Google Maps Distance Matrix URL format
+#   https://maps.googleapis.com/maps/api/distancematrix/outputFormat?parameters
+
+#   https://maps.googleapis.com/maps/api/distancematrix/json?
+#   origins=Vancouver+BC        For coordinates, 'latitude' + %2C + 'longitude'
+#   &destinations=San+Francisco
+#   &units=imperial
+#   &mode=walking
+#   &language=en-EN
+#   &key=AIzaSyCnQLfehLWCsHMsay61rzCnF4JelH4VqVU
+
+#   API Key: AIzaSyCnQLfehLWCsHMsay61rzCnF4JelH4VqVU  ONLY VALID FOR TESTING
+
+#   Time is in seconds
