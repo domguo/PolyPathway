@@ -1,9 +1,11 @@
 import time
+import datetime as dt
 import csv  # Used to read CSV files
 
 def makeEventList():
+
     currentTime = time.time()
-    
+
     data = csv.reader(open('events.csv',"r"), delimiter=",")
     currentEvents = list()
     for row in data:
