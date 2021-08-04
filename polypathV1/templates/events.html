@@ -26,13 +26,13 @@
       <tbody>
         {% for value in eventlist %}
             <tr>
-              <td>{{ value[0] }}</td>
 
-              <td>{{ value[4] }}</td>
-
-              <td>{{ value[5] }}</td>
               <form action = "/eventsGO" method="GET">
               <input type="submit" id="eventID" name="eventID" value={{value[0]}}>
+              <td>Start: </td>
+              <td>{{ value[4] }}</td>
+              <td>End: </td>
+              <td>{{ value[5] }}</td>
               </form>
               <br>
             </tr>
