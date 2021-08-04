@@ -24,8 +24,11 @@
       
       <form action = "/userRequestMap" method="GET">
        <label for="buildID">Enter Building/Parking-Lot Number</label><br><br>
-      <label for="buildID">PARKING</label><br>
-      <input type="checkbox" id="parking" name="parking" value="0"><br>
+       <div class="parking">
+        <label for="buildID">PARKING</label><br>
+        <input type="checkbox" id="parking" name="parking" value="0"><br>
+       </div>
+      
      
       <input type="text" id="buildID" name="buildID" value="8"><br>
       <input type="submit" value="NAVIGATE">
@@ -37,7 +40,11 @@
           width: 100%;
           letter-spacing:4mm;
           border-radius: 20rem;
-          border-style:groove
+          border-style:groove;
+         
+        }
+        form .parking {
+          width:10%;
         }
       </style>
 
@@ -55,12 +62,18 @@
           <span></span>
           <span></span>
         </div>
-        <li> <a href="../">Home</a> </li>
-        <li> <a href="../locationHome">Quick Search</a> </li>
-        <li> <a href="../events">Events</a> </li>
-        <li> <a href="../campusMap">Campus Map</a> </li>
-        <li> <a href="../contact">Contact</a> </li>
-        <li> <a href="../aboutus">About</a> </li>
+        <div class="entireSection">
+          <div class="currentSelect">
+            <li> <a href="../">Home</a> <style> .currentSelect li a { color: white;}</style> </li>
+          </div>
+          <li> <a href="../locationHome">Quick Search</a> </li>
+          <li> <a href="../distance">ETA Calculator</a> </li>
+          <li> <a href="../events">Events</a> </li>
+          <li> <a href="../campusMap">Campus Map</a> </li>
+          <li> <a href="../contact">Contact</a> </li>
+          <li> <a href="../aboutus">About</a> </li>
+        </div>
+       
     </ul>
 </div>
 

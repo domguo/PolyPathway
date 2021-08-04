@@ -18,29 +18,42 @@
       }
     </style> 
     <body>
+
+  
         <section class="showcase">
+            <div class="toggle-btn" onclick="show()">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
             <div id="sidebar">
-   
-                <div class="toggle-btn" onclick="show()">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-            
+
                 <ul>
-                    <li> <a href="../">Home</a> </li>
-                    <li> <a href="../locationHome">Quick Search</a> </li>
-                    <li> <a href="../events">Events</a> </li>
-                    <li> <a href="../campusMap">Campus Map</a> </li>
-                    <li> <a href="../contact">Contact</a> </li>
-                    <li> <a href="../aboutus">About</a> </li>
-              </ul>
-            </div>
+                    <div class="toggle-btn" onclick="show()">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <div class="entireSection">
+                      <li> <a href="../">Home</a> </li>
+                      <li> <a href="../locationHome">Quick Search</a> </li>
+                      <li> <a href="../distance">ETA Calc</a> </li>
+                      <li> <a href="../events">Events</a> </li>
+                      <li> <a href="../campusMap">Campus Map</a> </li>
+                      <div class="currentSelect">
+                        <li> <a href="../contact">Contact</a>  <style> .currentSelect li a { color: white;}</style> </li>
+                      </div>
+                   
+                      <li> <a href="../aboutus">About</a> </li>
+                    </div>
+                   
+                </ul>
+          </div>
             <section class="container">
               <img src="../static/images/polyPathFF.png" alt=" " class="logo" />
         
               <br><br><br>
-              <body>
+            
                   <h2 style="text-align: center;">Contact Us</h2> <!-- Text style here -->
                 <div class="container">
                     <form action="https://formsubmit.co/polypathway@gmail.com" method="POST" class="form">        
@@ -68,13 +81,15 @@
                         </div>
                     </form>
                 </div>
-            </body>
-        <script>
-          function show() {
-            document.getElementById('sidebar').classList.toggle('active');
-          }
-        </script>
+    
     </body>
+
+<script>
+    function show() {
+        document.getElementById('sidebar').classList.toggle('active');
+    }
+</script>
+
 
 <script>
     $(function() {   

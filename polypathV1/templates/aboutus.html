@@ -13,93 +13,105 @@
 
  
   <body>
-    <div class="toggle-btn" onclick="show()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-<div id="sidebar">
 
 
-    <ul>
-      <div class="toggle-btn" onclick="show()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <li> <a href="../">Home</a> </li>
-      <li> <a href="../locationHome.html">Quick Search</a> </li>
-      <li> <a href="../aboutus.html">About</a> </li>
-      <li> <a href="../contact.html">Contact</a> </li>
-      <li> <a href="../campusMap.html">Campus Map</a> </li>
-  </ul>
-</div>
 
-  <div class="title">
-    <h1>About Us</h1>
-  </div>
+
 
 
    
-      
-            <section class="container">
-              <img src="../static/images/polyPathFF.png" alt=" " class="logo" />
+      <div class="showcase">
+        <div class="toggle-btn" onclick="show()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+          <div id="sidebar">
+  
+            <ul>
+              <div class="toggle-btn" onclick="show()">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="entireSection">
+                <li> <a href="../">Home</a> </li>
+                <li> <a href="../locationHome">Quick Search</a> </li>
+                <li> <a href="../distance">ETA Calculator</a> </li>
+                <li> <a href="../events">Events</a> </li>
+                <li> <a href="../campusMap">Campus Map</a> </li>
+                <li> <a href="../contact">Contact</a> </li>
+                <div class="currentSelect">
+                  <li> <a href="../aboutus">About</a>   <style> .currentSelect li a { color: white;}</style> </li>
+                </div>
+             
+              </div>
+             
+          </ul>
+          </div>
+        <section class="container">
+              
         
-              <br><br><br>
-              <body>
-                <div class="title">
-                  <h1>About Us</h1>
-                </div>
+          <br><br><br>
+       
+            <div class="title">
+              <h1>About Us</h1>
+            </div>
+            <div class="slideshow-container">
+          
+              <!-- Full-width images with number and caption text -->
+              <div class="mySlides fade">
+               
+                <img src="../static/images/Mitchell.jpg" style="width:100%">
+                
+                <div class="text">Mitchell Humphries <br> Back-End Engineer</div>
+                
+              </div>
+            
+              <div class="mySlides fade">
+               
+                <img src="../static/images/Dom.jpg" style="width:100%">
+                <div class="text">Dominic Guo <br> Back-End Engineer </div>
+               
+              </div>
+            
+              <div class="mySlides fade">
+               
+                <img src="../static/images/Michael.jpg" style="width:100%">
+                <div class="text">Michael Melkonian <br> Front-End Engineer </div>
+              
+              </div>
 
-                 
+              <div class="mySlides fade">
+               
+                <img src="../static/images/SantaMonica.jpg" style="width:100%">
+                <div class="text">Alex Lin <br> Front-End Engineer </div>
+              
+              </div>
+            
+              <!-- Next and previous buttons -->
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+            
+            <!-- The dots/circles -->
+            <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span>
+              <span class="dot" onclick="currentSlide(2)"></span>
+              <span class="dot" onclick="currentSlide(3)"></span>
+              <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+
+          
+             </section>
+      </div>
+     
+       
+   
+           
                 </body>
-                <div class="slideshow-container">
-              
-                  <!-- Full-width images with number and caption text -->
-                  <div class="mySlides fade">
-                   
-                    <img src="../static/images/Mitchell.jpg" style="width:100%">
-                    
-                    <div class="text">Mitchell Humphries <br> Back-End Engineer</div>
-                    
-                  </div>
                 
-                  <div class="mySlides fade">
-                   
-                    <img src="../static/images/Dom.jpg" style="width:100%">
-                    <div class="text">Dominic Guo <br> Back-End Engineer </div>
-                   
-                  </div>
-                
-                  <div class="mySlides fade">
-                   
-                    <img src="../static/images/Michael.jpg" style="width:100%">
-                    <div class="text">Michael Melkonian <br> Front-End Engineer </div>
-                  
-                  </div>
-
-                  <div class="mySlides fade">
-                   
-                    <img src="../static/images/SantaMonica.jpg" style="width:100%">
-                    <div class="text">Alex Lin <br> Front-End Engineer </div>
-                  
-                  </div>
-                
-                  <!-- Next and previous buttons -->
-                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                </div>
-                <br>
-                
-                <!-- The dots/circles -->
-                <div style="text-align:center">
-                  <span class="dot" onclick="currentSlide(1)"></span>
-                  <span class="dot" onclick="currentSlide(2)"></span>
-                  <span class="dot" onclick="currentSlide(3)"></span>
-                  <span class="dot" onclick="currentSlide(4)"></span>
-                </div>
-
-              
                 <style>
                     .slideshow-container {
                       padding-top:10%;
@@ -200,7 +212,7 @@
                   function show() {
                     document.getElementById('sidebar').classList.toggle('active');
                   }
-                  </script>
+              </script>
                   <script>
                       var slideIndex = 1;
               showSlides(slideIndex);

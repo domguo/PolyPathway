@@ -12,28 +12,42 @@
 
     <body>
       <section class="showcase">
-          <div id="sidebar">
- 
-              <div class="toggle-btn" onclick="show()">
-                <span></span>
-                <span></span>
-                <span></span>
+        <div class="toggle-btn" onclick="show()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div id="sidebar">
+
+
+          <ul>
+            <div class="toggle-btn" onclick="show()">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="entireSection">
+              <li> <a href="../">Home</a> </li>
+              <li> <a href="../locationHome">Quick Search</a> </li>
+              <li> <a href="../distance">ETA</a> </li>
+              <li> <a href="../events">Events</a> </li>
+              <div class="currentSelect">
+                <li> <a href="../campusMap">Campus Map</a>  <style> .currentSelect li a { color: white;}</style> </li>
               </div>
-          
-              <ul>
-                <li> <a href="../">Home</a> </li>
-                <li> <a href="../locationHome">Quick Search</a> </li>
-                <li> <a href="../events">Events</a> </li>
-                <li> <a href="../campusMap">Campus Map</a> </li>
-                <li> <a href="../contact">Contact</a> </li>
-                <li> <a href="../aboutus">About</a> </li>
-            </ul>
-          </div>
+              <li> <a href="../contact">Contact</a> </li>
+              <li> <a href="../aboutus">About</a> </li>
+            </div>
+           
+        </ul>
+    </div>
           <section class="container">
             <img src="../static/images/polyPathFF.png" alt=" " class="logo" />
       
             <br><br><br>  
-            <div id="campusMap" ></div>          
+            <div id="campusMap" ></div>   
+          </section>       
+        </section>    
+      
       <script>
         function show() {
           document.getElementById('sidebar').classList.toggle('active');
@@ -56,9 +70,12 @@
                 });
               }
           </script>
-        
             <!-- Replace API_KEY when we go live and you can keep the MAP_ID  -->
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnQLfehLWCsHMsay61rzCnF4JelH4VqVU&map_ids=86537033817cb2e3&callback=initMap">
-            </script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnQLfehLWCsHMsay61rzCnF4JelH4VqVU&map_ids=86537033817cb2e3&callback=initMap">
+                </script>
+       
+
+
+           
   </body>
 </html>
