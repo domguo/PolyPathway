@@ -18,8 +18,7 @@
           <span></span>
         </div>
         <div id="sidebar">
-
-
+          
           <ul>
             <div class="toggle-btn" onclick="show()">
               <span></span>
@@ -29,7 +28,7 @@
             <div class="entireSection">
               <li> <a href="../">Home</a> </li>
               <li> <a href="../locationHome">Quick Search</a> </li>
-              <li> <a href="../distance">ETA</a> </li>
+              <li> <a href="../distance">ETA CALC</a> </li>
               <li> <a href="../events">Events</a> </li>
               <div class="currentSelect">
                 <li> <a href="../campusMap">Campus Map</a>  <style> .currentSelect li a { color: white;}</style> </li>
@@ -39,43 +38,45 @@
             </div>
            
         </ul>
+
     </div>
           <section class="container">
             <img src="../static/images/polyPathFF.png" alt=" " class="logo" />
-      
             <br><br><br>  
             <div id="campusMap" ></div>   
           </section>       
-        </section>    
-      
-      <script>
-        function show() {
-          document.getElementById('sidebar').classList.toggle('active');
-        }
-        
-      </script>
-
-          <script>     //Script for Custom Map
-            function initMap() {        
-                map = new google.maps.Map(document.getElementById('campusMap'), {
-                  center: {
-                    lat: 34.058591346994056,
-                    lng: -117.82175552024833
-                  },
-                  zoom: 18,
-                  mapId: '86537033817cb2e3', //custom map ID
-                  mapTypeControl: false, //Map controls to see streetview, fullscreen
-                  fullscreenControl: false,
-                  streetViewControl: false,
-                });
-              }
-          </script>
-            <!-- Replace API_KEY when we go live and you can keep the MAP_ID  -->
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnQLfehLWCsHMsay61rzCnF4JelH4VqVU&map_ids=86537033817cb2e3&callback=initMap">
-                </script>
-       
+     
+    
 
 
            
   </body>
 </html>
+
+  
+<script>
+  function show() {
+    document.getElementById('sidebar').classList.toggle('active');
+  }
+  
+</script>
+
+    <script>     //Script for Custom Map
+      function initMap() {        
+          map = new google.maps.Map(document.getElementById('campusMap'), {
+            center: {
+              lat: 34.058591346994056,
+              lng: -117.82175552024833
+            },
+            zoom: 18,
+            mapId: '86537033817cb2e3', //custom map ID
+            mapTypeControl: false, //Map controls to see streetview, fullscreen
+            fullscreenControl: false,
+            streetViewControl: false,
+          });
+        }
+    </script>
+      <!-- Replace API_KEY when we go live and you can keep the MAP_ID  -->
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnQLfehLWCsHMsay61rzCnF4JelH4VqVU&map_ids=86537033817cb2e3&callback=initMap">
+          </script>
+  
