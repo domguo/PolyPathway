@@ -47,34 +47,37 @@
       <br><br><br>
       
       <form action = "/findDistance" method="GET">
-       <label for="buildID">Enter Building/Parking-Lot Number to Calculate From</label><br><br>
+       <label for="buildID"><h3>Enter Building/Parking-Lot Number to Calculate From:</h3></label><br><br>
        <div class="parking">
         <label for="buildID">PARKING</label><br>
         <input type="checkbox" id="parking1" name="parking1" value="0"><br>
        </div>
       
      
-      <input type="text" id="buildID1" name="buildID1" value="8"><br>
+      <input type="text" id="buildID1" name="buildID1" placeholder="Building/Parking No."><br>
 
-      <label for="buildID">Enter Building/Parking-Lot Number to Calculate To</label><br><br>
+      <label for="buildID"> <h3>Enter Building/Parking-Lot Number to Calculate To:</h3></label><br><br>
       <div class="parking">
         <label for="buildID">PARKING</label><br>
         <input type="checkbox" id="parking2" name="parking2" value="0"><br>
        
       </div>
      
-      <input type="text" id="buildID2" name="buildID2" value="66"><br>
+      <input type="text" id="buildID2" name="buildID2" placeholder="Building/Parking No."><br>
 
-      <input type="submit" value="CALCULATE">
+      <div class="calcButt">
+        <input type="submit" value="CALCULATE">
+      </div>
+      
       </form> 
       <br>
-      <h3 style="color:black;">{{variable}}</h3>
+      <h3 style="color:white;">{{variable}}</h3>
       </section>
       </section>
 
       <style>
 
-        form input {
+         .calcButt input{
           width: 100%;
           letter-spacing:4mm;
           border-radius: 20rem;
