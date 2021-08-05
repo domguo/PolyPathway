@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-
-
-<!-- Home Page. -->
-<!-- JelloMan -->
-
-
+<!-- Events Page. -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +12,6 @@
   </head>
   <body>
 
-
   <section class="showcase">
     <section class="container">
       <img src="../static/images/polyPathFF.png" alt=" " class="logo" />
@@ -26,13 +19,13 @@
       <tbody>
         {% for value in eventlist %}
             <tr>
-              <td>{{ value[0] }}</td>
-      
-              <td>{{ value[4] }}</td>
-         
-              <td>{{ value[5] }}</td>
+
               <form action = "/eventsGO" method="GET">
               <input type="submit" id="eventID" name="eventID" value={{value[0]}}>
+              <td>Start: </td>
+              <td>{{ value[4] }}</td>
+              <td>End: </td>
+              <td>{{ value[5] }}</td>
               </form>
               <br>
             </tr>
@@ -68,8 +61,8 @@
           <span></span>
         </div>
         <div class="entireSection">
-         
-          <li> <a href="../">Home</a> 
+
+          <li> <a href="../">Home</a>
           <li> <a href="../locationHome">Quick Search</a> </li>
           <li> <a href="../distance">ETA CALC</a> </li>
           <div class="currentSelect">
@@ -88,8 +81,6 @@
     document.getElementById('sidebar').classList.toggle('active');
   }
 </script>
-
-
   </body>
 
 </html>
